@@ -281,39 +281,43 @@
 
   .service-card li { margin-bottom: 6px; }
 
-  /* Business list */
-  .biz-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  @media (max-width: 720px) { .biz-list { grid-template-columns: 1fr; } }
-
-  .biz-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    padding: 20px;
+  /* Business detail */
+  .biz-detail {
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 16px;
+    padding: 28px;
+    background: #fff;
+    margin-bottom: 20px;
   }
 
-  .biz-num {
-    flex: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    background: var(--bg-soft);
-    color: var(--blue-dark);
+  .biz-detail img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 22px;
+  }
+
+  .biz-detail h3 {
+    font-size: 1.1rem;
     font-weight: 800;
-    font-size: 0.82rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 12px;
   }
 
-  .biz-item p { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+  .biz-detail p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .biz-note {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .biz-note a {
+    color: var(--blue-dark);
+    font-weight: 700;
+    text-decoration: underline;
+  }
 
   /* Representative */
   .rep {
@@ -415,7 +419,7 @@
         </tr>
         <tr>
           <th>代表者</th>
-          <td>代表理事　板谷 佳朗（いたや よしろう）</td>
+          <td>代表理事　板谷 佳朗</td>
         </tr>
         <tr>
           <th>所在地</th>
@@ -443,30 +447,28 @@
     <div class="section-head">
       <div class="kicker">Business</div>
       <h2>事業内容</h2>
-      <p>JMSAは2013年の設立以来、マーケティング分野のセミナー・コンテンツプロデュース事業を中核に、近年はAI導入による業務効率化支援へと事業領域を広げています。経営者・個人事業主が日々の雑務に費やす時間をAIに移管し、本業や意思決定に集中できる状態をつくることを目的に、以下の事業を展開しています。</p>
+      <p>JMSAは2013年の設立以来、マーケティング分野のセミナー・コンテンツプロデュース事業を中核に、近年はAI導入による業務効率化支援へと事業領域を広げています。</p>
     </div>
-    <div class="biz-list">
-      <div class="biz-item">
-        <span class="biz-num">01</span>
-        <p>マーケティング戦略・ブランディングに関するコンサルティング業務</p>
-      </div>
-      <div class="biz-item">
-        <span class="biz-num">02</span>
-        <p>セミナー・研修コンテンツの企画・プロデュースおよび運営</p>
-      </div>
-      <div class="biz-item">
-        <span class="biz-num">03</span>
-        <p>AI導入・活用に関する経営コンサルティング業務</p>
-      </div>
-      <div class="biz-item">
-        <span class="biz-num">04</span>
-        <p>業務効率化・生産性向上を目的とした業務設計支援</p>
-      </div>
-      <div class="biz-item">
-        <span class="biz-num">05</span>
-        <p>業務支援ツール・システムの企画および開発支援</p>
-      </div>
+
+    <div class="biz-detail">
+      <img src="assets/biz-marketing-1.jpg" alt="戦略的マーケティングコンサルティングの様子">
+      <h3>戦略的マーケティングコンサルティング</h3>
+      <p>私たちの戦略的マーケティングコンサルティングは、単なる短期的な成果を目指すのではなく、長期的に持続可能な成長を実現するための総合的な支援を行います。市場の深い理解と最新のデータ分析を基に、貴社のビジネスに最適なマーケティング戦略を構築。ターゲットの明確化から、競争優位性の強化、ブランドの価値向上に至るまで、貴社の未来をデザインします。変化する市場環境の中でも、最適な方法で成果を導くマーケティングパートナーとして共に歩みます。</p>
     </div>
+
+    <div class="biz-detail">
+      <img src="assets/biz-marketing-2.png" alt="セミナー・コンテンツのプロデュースの様子">
+      <h3>セミナー・コンテンツのプロデュース</h3>
+      <p>私たちは、貴社のブランドやメッセージを効果的に伝えるためのセミナーやコンテンツのプロデュースを行います。ターゲットに響く「独自のマーケティングシナリオ」を駆使し、お客様にとって価値のある学びと体験を提供。業界の最前線の情報を取り入れた知識を提供し、市場のリーダーとしての地位を確立する手助けをします。また、オンライン・オフライン両方で効果的なコンテンツを制作し、参加者との顧客満足を最大化します。</p>
+    </div>
+
+    <div class="biz-detail">
+      <img src="assets/biz-marketing-3.png" alt="マーケティングに関わるセミナーの主催の様子">
+      <h3>マーケティングに関わるセミナーの主催</h3>
+      <p>当社では、マーケティング業界のトレンドや実践的なノウハウを学べるセミナーを主催しています。最新のマーケティング戦略、ツール、データ分析の技術など、実務に役立つ内容を提供し、業界最先端の知識と経験を深める機会を創出します。また、セミナー参加者同士のネットワークを通じて、新たなビジネスチャンスをつかむことも目的にしています。マーケティングの基礎から応用まで幅広いテーマを取り扱い、企業の業績アップに貢献するための実践的な学びの場を提供します。</p>
+    </div>
+
+    <p class="biz-note">近年はこれらのマーケティング支援に加え、AI導入による経営コンサルティング事業も展開しています。詳しくは<a href="#service">サービス内容</a>をご覧ください。</p>
   </div>
 </section>
 
