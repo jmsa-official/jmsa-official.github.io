@@ -296,6 +296,25 @@
     margin-bottom: 22px;
   }
 
+  .biz-photos {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .biz-photos img {
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .biz-photos { grid-template-columns: 1fr; }
+  }
+
   .biz-detail h3 {
     font-size: 1.1rem;
     font-weight: 800;
@@ -457,13 +476,19 @@
     </div>
 
     <div class="biz-detail">
-      <img src="assets/biz-marketing-2.png" alt="セミナー・コンテンツのプロデュースの様子">
+      <div class="biz-photos">
+        <img src="assets/biz-marketing-2a.jpg" alt="セミナーで登壇する代表理事">
+        <img src="assets/biz-marketing-2b.jpg" alt="セミナー会場の様子">
+      </div>
       <h3>セミナー・コンテンツのプロデュース</h3>
       <p>私たちは、貴社のブランドやメッセージを効果的に伝えるためのセミナーやコンテンツのプロデュースを行います。ターゲットに響く「独自のマーケティングシナリオ」を駆使し、お客様にとって価値のある学びと体験を提供。業界の最前線の情報を取り入れた知識を提供し、市場のリーダーとしての地位を確立する手助けをします。また、オンライン・オフライン両方で効果的なコンテンツを制作し、参加者との顧客満足を最大化します。</p>
     </div>
 
     <div class="biz-detail">
-      <img src="assets/biz-marketing-3.png" alt="マーケティングに関わるセミナーの主催の様子">
+      <div class="biz-photos">
+        <img src="assets/biz-marketing-3a.jpg" alt="セミナー会場の様子">
+        <img src="assets/biz-marketing-3b.jpg" alt="マーケティングプランを解説する代表理事">
+      </div>
       <h3>マーケティングに関わるセミナーの主催</h3>
       <p>当社では、マーケティング業界のトレンドや実践的なノウハウを学べるセミナーを主催しています。最新のマーケティング戦略、ツール、データ分析の技術など、実務に役立つ内容を提供し、業界最先端の知識と経験を深める機会を創出します。また、セミナー参加者同士のネットワークを通じて、新たなビジネスチャンスをつかむことも目的にしています。マーケティングの基礎から応用まで幅広いテーマを取り扱い、企業の業績アップに貢献するための実践的な学びの場を提供します。</p>
     </div>
