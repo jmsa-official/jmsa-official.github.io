@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一般社団法人JMSA | AI経営コンサルティング</title>
+<meta name="description" content="一般社団法人JMSAは、中小企業・個人事業主向けにAI導入・活用による業務効率化を支援する経営コンサルティング法人です。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --blue: #0d6efd;
+    --blue-dark: #0b3d91;
+    --green: #1fa855;
+    --ink: #1a2233;
+    --ink-soft: #4a5568;
+    --line: #e4e8ef;
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 14px 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand img { height: 34px; width: auto; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: #fff !important;
+    padding: 9px 22px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, #0d6efd14 0%, transparent 60%),
+      radial-gradient(ellipse 700px 400px at 100% 10%, #1fa85518 0%, transparent 60%),
+      var(--bg-soft);
+    padding: 96px 24px 88px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue-dark);
+    background: #0d6efd12;
+    border: 1px solid #0d6efd33;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    margin-bottom: 22px;
+    max-width: 780px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 0 10px 28px #0d6efd33;
+  }
+
+  .btn-secondary {
+    background: #fff;
+    color: var(--ink);
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    border: 1px solid var(--line);
+  }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  section.tight { padding: 72px 0; }
+
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+
+  .kicker {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .section-head p {
+    color: var(--ink-soft);
+    margin-top: 14px;
+    font-size: 0.96rem;
+  }
+
+  .bg-soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  /* Overview table */
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+  }
+
+  .overview-table tr { border-bottom: 1px solid var(--line); }
+  .overview-table tr:last-child { border-bottom: none; }
+
+  .overview-table th {
+    text-align: left;
+    padding: 18px 24px;
+    width: 180px;
+    color: var(--ink-soft);
+    font-weight: 700;
+    background: var(--bg-soft);
+    vertical-align: top;
+  }
+
+  .overview-table td {
+    padding: 18px 24px;
+    vertical-align: top;
+  }
+
+  .overview-box {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .overview-table th { width: 120px; padding: 14px 14px; font-size: 0.82rem; }
+    .overview-table td { padding: 14px 14px; font-size: 0.88rem; }
+  }
+
+  /* Services grid */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 820px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 30px 26px;
+    background: #fff;
+  }
+
+  .service-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .service-card ul {
+    margin-top: 14px;
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 0.87rem;
+  }
+
+  .service-card li { margin-bottom: 6px; }
+
+  /* Business list */
+  .biz-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 720px) { .biz-list { grid-template-columns: 1fr; } }
+
+  .biz-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+
+  .biz-num {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--bg-soft);
+    color: var(--blue-dark);
+    font-weight: 800;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .biz-item p { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+
+  /* Representative */
+  .rep {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 680px) {
+    .rep { grid-template-columns: 1fr; }
+  }
+
+  .rep img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+
+  .rep-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+  .rep-title { color: var(--blue-dark); font-size: 0.88rem; font-weight: 700; margin-bottom: 20px; }
+  .rep-body { color: var(--ink-soft); font-size: 0.94rem; }
+  .rep-body p { margin-bottom: 14px; }
+
+  /* Contact */
+  .contact-box {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 44px;
+    background: var(--bg-soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 680px) {
+    .contact-box { grid-template-columns: 1fr; padding: 28px; }
+  }
+
+  .contact-item { margin-bottom: 20px; }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-label { font-size: 0.75rem; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 6px; }
+  .contact-value { font-size: 1.04rem; font-weight: 700; }
+  .contact-value a { color: var(--blue-dark); }
+
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpg" alt="JMSA logo">
+      一般社団法人JMSA
+    </a>
+    <nav class="nav-links">
+      <a href="#about">会社概要</a>
+      <a href="#business">事業内容</a>
+      <a href="#service">サービス</a>
+      <a href="#rep">代表挨拶</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="nav-cta" href="#contact">無料相談を申し込む</a>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">AI CONSULTING FIRM</span>
+    <h1>中小企業・個人事業主のための<br><em>AI経営コンサルティング</em></h1>
+    <p>一般社団法人JMSAは、AIの導入・活用によって経営者の時間を生み出し、事業の成長に集中できる環境づくりを支援するコンサルティング法人です。</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contact">無料相談を申し込む</a>
+      <a class="btn-secondary" href="#business">事業内容を見る</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Company</div>
+      <h2>会社概要</h2>
+    </div>
+    <div class="overview-box">
+      <table class="overview-table">
+        <tr>
+          <th>法人名</th>
+          <td>一般社団法人JMSA</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>代表理事　板谷 佳朗（いたや よしろう）</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒167-0021　東京都杉並区井草1-34-6</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2013年4月2日（平成25年4月2日）</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>マーケティング・セミナーコンテンツのプロデュース事業／AI導入・活用に関する経営コンサルティング事業／業務効率化支援事業／人材育成・研修事業</td>
+        </tr>
+        <tr>
+          <th>連絡先</th>
+          <td>電話：090-3903-5534　／　メール：dreamshift2010@gmail.com</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="business" class="bg-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Business</div>
+      <h2>事業内容</h2>
+      <p>JMSAは2013年の設立以来、マーケティング分野のセミナー・コンテンツプロデュース事業を中核に、近年はAI導入による業務効率化支援へと事業領域を広げています。経営者・個人事業主が日々の雑務に費やす時間をAIに移管し、本業や意思決定に集中できる状態をつくることを目的に、以下の事業を展開しています。</p>
+    </div>
+    <div class="biz-list">
+      <div class="biz-item">
+        <span class="biz-num">01</span>
+        <p>マーケティング戦略・ブランディングに関するコンサルティング業務</p>
+      </div>
+      <div class="biz-item">
+        <span class="biz-num">02</span>
+        <p>セミナー・研修コンテンツの企画・プロデュースおよび運営</p>
+      </div>
+      <div class="biz-item">
+        <span class="biz-num">03</span>
+        <p>AI導入・活用に関する経営コンサルティング業務</p>
+      </div>
+      <div class="biz-item">
+        <span class="biz-num">04</span>
+        <p>業務効率化・生産性向上を目的とした業務設計支援</p>
+      </div>
+      <div class="biz-item">
+        <span class="biz-num">05</span>
+        <p>業務支援ツール・システムの企画および開発支援</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Service</div>
+      <h2>3ステップで実現する「自由な経営」</h2>
+      <p>ツールの使い方を教えるだけで終わらせず、経営者ご本人の判断基準やトーンを理解した「AIパートナー」を一緒に育てていくことを支援します。</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="service-step">1</span>
+        <h3>AIパートナーの導入</h3>
+        <p>メール対応・議事録作成・情報収集など、日々の雑務をAIに任せられる状態をつくります。</p>
+        <ul>
+          <li>業務の棚卸しと優先順位設計</li>
+          <li>業務専用テンプレート・自動応答の整備</li>
+          <li>AIパートナーの運用トレーニング</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-step">2</span>
+        <h3>AI部署の構築</h3>
+        <p>リサーチ・制作・品質管理を、複数のAIが分担して並行稼働する体制を構築します。</p>
+        <ul>
+          <li>役割別のAIチーム編成</li>
+          <li>並列稼働できる業務フロー設計</li>
+          <li>品質チェック・ブランド整合性の担保</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-step">3</span>
+        <h3>自分AIの創造</h3>
+        <p>経営者ご本人の判断基準を学習したAIが、AI部署への指示出しまでを担う仕組みをつくります。</p>
+        <ul>
+          <li>判断基準・価値観の言語化</li>
+          <li>意思決定を代行する仕組みの構築</li>
+          <li>継続的な運用・改善サポート</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rep" class="bg-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Representative</div>
+      <h2>代表者挨拶</h2>
+    </div>
+    <div class="rep">
+      <img src="assets/representative.jpg" alt="代表理事 板谷佳朗">
+      <div>
+        <div class="rep-name">板谷 佳朗</div>
+        <div class="rep-title">代表理事</div>
+        <div class="rep-body">
+          <p>「AIを使いましょう」という情報は、今や世の中に溢れています。しかし、その多くはツールの使い方を教えて終わるものです。私たちが大切にしているのは、そのAIが経営者ご本人の「パートナー」になれるかどうかという点です。</p>
+          <p>この仕組みは、私自身が法人運営の現場でAIパートナーと共に設計・実践してきたものを土台にしています。頭の中で考えた理論ではなく、実際に使い続けてきた実証済みの方法です。</p>
+          <p>本当に大切なことに時間を使える経営者を、一人でも多く増やしていくことがJMSAの使命だと考えています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Contact</div>
+      <h2>お問い合わせ</h2>
+      <p>無料相談を随時受け付けております。まずはお気軽にご連絡ください。</p>
+    </div>
+    <div class="contact-box">
+      <div>
+        <div class="contact-item">
+          <div class="contact-label">法人名</div>
+          <div class="contact-value">一般社団法人JMSA</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">所在地</div>
+          <div class="contact-value">〒167-0021　東京都杉並区井草1-34-6</div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-item">
+          <div class="contact-label">電話番号</div>
+          <div class="contact-value"><a href="tel:09039035534">090-3903-5534</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">メールアドレス</div>
+          <div class="contact-value"><a href="mailto:dreamshift2010@gmail.com">dreamshift2010@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2013–2026 一般社団法人JMSA All Rights Reserved.
+</footer>
+
+</body>
+</html>
