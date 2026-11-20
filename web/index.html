@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公式サイト制作 | 一般社団法人JMSA</title>
+<meta name="description" content="YouTuber・個人で活動する方のための公式サイト制作。プロフィールとお問い合わせの窓口をひとつにした「名刺がわりのサイト」を、先着10名さま限定50,000円（税抜）〜、最短2週間でお作りします。">
+<style>
+  :root {
+    --blue: #0d6efd;
+    --blue-dark: #0b3d91;
+    --green: #1fa855;
+    --ink: #1a2233;
+    --ink-soft: #4a5568;
+    --line: #e4e8ef;
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans JP', 'Noto Sans CJK JP', Meiryo, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 14px 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand img { height: 34px; width: auto; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: #fff !important;
+    padding: 9px 22px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, #0d6efd14 0%, transparent 60%),
+      radial-gradient(ellipse 700px 400px at 100% 10%, #1fa85518 0%, transparent 60%),
+      var(--bg-soft);
+    padding: 96px 24px 88px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue-dark);
+    background: #0d6efd12;
+    border: 1px solid #0d6efd33;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    margin-bottom: 22px;
+    max-width: 780px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 0 10px 28px #0d6efd33;
+  }
+
+  .btn-secondary {
+    background: #fff;
+    color: var(--ink);
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    border: 1px solid var(--line);
+  }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  section.tight { padding: 72px 0; }
+
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+
+  .kicker {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .section-head p {
+    color: var(--ink-soft);
+    margin-top: 14px;
+    font-size: 0.96rem;
+  }
+
+  .bg-soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  /* Overview table */
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+  }
+
+  .overview-table tr { border-bottom: 1px solid var(--line); }
+  .overview-table tr:last-child { border-bottom: none; }
+
+  .overview-table th {
+    text-align: left;
+    padding: 18px 24px;
+    width: 180px;
+    color: var(--ink-soft);
+    font-weight: 700;
+    background: var(--bg-soft);
+    vertical-align: top;
+  }
+
+  .overview-table td {
+    padding: 18px 24px;
+    vertical-align: top;
+  }
+
+  .overview-box {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .overview-table th { width: 120px; padding: 14px 14px; font-size: 0.82rem; }
+    .overview-table td { padding: 14px 14px; font-size: 0.88rem; }
+  }
+
+  /* Services grid */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 820px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 30px 26px;
+    background: #fff;
+  }
+
+  .service-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .service-card ul {
+    margin-top: 14px;
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 0.87rem;
+  }
+
+  .service-card li { margin-bottom: 6px; }
+
+  /* Business detail */
+  .biz-detail {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+
+  .biz-detail img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 22px;
+  }
+
+  .biz-photos {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .biz-photos img {
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 560px) {
+    .biz-photos { grid-template-columns: 1fr; }
+  }
+
+  .biz-detail h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .biz-detail p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .biz-note {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .biz-note a {
+    color: var(--blue-dark);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* Representative */
+  .rep {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 680px) {
+    .rep { grid-template-columns: 1fr; }
+  }
+
+  .rep img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+
+  .rep-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+  .rep-title { color: var(--blue-dark); font-size: 0.88rem; font-weight: 700; margin-bottom: 20px; }
+  .rep-body { color: var(--ink-soft); font-size: 0.94rem; }
+  .rep-body p { margin-bottom: 14px; }
+
+  /* Contact */
+  .contact-box {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 44px;
+    background: var(--bg-soft);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 680px) {
+    .contact-box { grid-template-columns: 1fr; padding: 28px; }
+  }
+
+  .contact-item { margin-bottom: 20px; }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-label { font-size: 0.75rem; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 6px; }
+  .contact-value { font-size: 1.04rem; font-weight: 700; }
+  .contact-value a { color: var(--blue-dark); }
+
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--line);
+  }
+  /* --- 公式サイト制作ページ --- */
+  .price-hero { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:30px; }
+  .price-hero .num { font-size:clamp(2rem,5vw,2.8rem); font-weight:900; color:var(--blue-dark); line-height:1.2; }
+  .price-hero .note { font-size:.9rem; color:var(--ink-soft); }
+  .badge { display:inline-block; font-size:.78rem; font-weight:700; color:#fff; background:linear-gradient(135deg,var(--blue),var(--green)); padding:4px 14px; border-radius:100px; }
+
+  .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+  @media (max-width:720px){ .why-grid{ grid-template-columns:1fr; } }
+
+  .plan { display:grid; grid-template-columns:1fr 1.25fr; gap:22px; align-items:start; }
+  @media (max-width:820px){ .plan{ grid-template-columns:1fr; } }
+  .plan-main { border:2px solid var(--blue); border-radius:18px; padding:32px 28px; background:#fff; }
+  .plan-main h3 { font-size:1.15rem; font-weight:800; margin:10px 0 4px; }
+  .plan-main .yen { font-size:2rem; font-weight:900; color:var(--blue-dark); }
+  .plan-main .yen small { font-size:.95rem; font-weight:700; }
+  .plan-main ul { list-style:none; margin-top:16px; }
+  .plan-main li { padding:8px 0 8px 26px; border-bottom:1px solid var(--line); position:relative; font-size:.93rem; }
+  .plan-main li:last-child { border-bottom:none; }
+  .plan-main li::before { content:""; position:absolute; left:4px; top:15px; width:12px; height:7px; border-left:2.5px solid var(--green); border-bottom:2.5px solid var(--green); transform:rotate(-45deg); }
+  .notes { margin-top:18px; font-size:.82rem; color:var(--ink-soft); }
+  .notes p { margin-bottom:4px; }
+
+  .flow { list-style:none; counter-reset:f; display:grid; gap:14px; }
+  .flow li { display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:start; border:1px solid var(--line); border-radius:14px; padding:18px 20px; background:#fff; }
+  .flow .n { width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--green)); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .flow h3 { font-size:1rem; font-weight:800; margin-bottom:2px; }
+  .flow p { font-size:.9rem; color:var(--ink-soft); }
+
+  .faq details { border:1px solid var(--line); border-radius:14px; padding:18px 22px; background:#fff; margin-bottom:12px; }
+  .faq summary { font-weight:800; cursor:pointer; font-size:.98rem; }
+  .faq details p { margin-top:10px; color:var(--ink-soft); font-size:.92rem; }
+
+  .cta-box { text-align:center; border-radius:20px; padding:48px 24px; color:#fff; background:linear-gradient(135deg,var(--blue-dark),var(--blue) 55%,var(--green)); }
+  .cta-box h2 { font-size:clamp(1.3rem,3vw,1.7rem); font-weight:800; margin-bottom:10px; }
+  .cta-box p { opacity:.92; margin-bottom:26px; font-size:.95rem; }
+  .cta-box .btn-white { display:inline-block; background:#fff; color:var(--blue-dark); padding:15px 36px; border-radius:100px; font-weight:800; box-shadow:0 10px 28px #0003; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="../">
+      <img src="../assets/logo.jpg" alt="JMSA logo">
+      一般社団法人JMSA
+    </a>
+    <nav class="nav-links">
+      <a href="#why">できること</a>
+      <a href="#price">料金</a>
+      <a href="#flow">流れ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="../">JMSAについて</a>
+    </nav>
+    <a class="nav-cta" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談を予約する</a>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">WEBSITE PRODUCTION</span>
+    <h1>YouTuber・個人で活動する方の<br><em>公式サイト制作</em></h1>
+    <p>プロフィールとお問い合わせの窓口をひとつに。お仕事のご相談が届きやすい「名刺がわりのサイト」をお作りします。</p>
+    <div class="price-hero">
+      <span class="badge">先着10名さま限定</span>
+      <span class="num">50,000円<small style="font-size:1rem">（税抜）〜</small></span>
+      <span class="note">最短2週間で公開</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談（30分・Zoom）を予約する</a>
+      <a class="btn-secondary" href="#price">料金を見る</a>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Why</div>
+      <h2>公式サイトがあると、変わること</h2>
+      <p>YouTubeの概要欄やSNSだけでは、あなたの活動をまとめて伝えにくいことがあります。公式サイトは、視聴者の方にも、お仕事を考えている企業の方にも開いてもらえる入り口になります。</p>
+    </div>
+    <div class="why-grid">
+      <div class="service-card">
+        <span class="service-step">1</span>
+        <h3>お仕事の窓口がひとつになる</h3>
+        <p>企業案件・取材・コラボ・出演のご相談を、お問い合わせフォームで受けられます。メールアドレスを公開しておく必要もなくなります。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-step">2</span>
+        <h3>プロフィールが伝わる</h3>
+        <p>経歴・活動内容・実績を1ページにまとめます。初めての方にも「どんな人か」がすぐ伝わります。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-step">3</span>
+        <h3>商品やレッスンを案内できる</h3>
+        <p>販売中の商品、教室・レッスン、公式LINEなど、伝えたいことへの道筋をつくります。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-step">4</span>
+        <h3>検索で見つけてもらえる</h3>
+        <p>名前やチャンネル名で検索したときに、公式の情報が出てくるようにします。</p>
+      </div>
+    </div>
+    <p class="biz-note" style="margin-top:28px">JMSAは2013年から、マーケティングのコンサルティングとセミナーのプロデュースを続けてきました。きれいなだけでなく「誰に、何を伝えて、どう動いてもらうか」から一緒に考えます。</p>
+  </div>
+</section>
+
+<section id="price" class="bg-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Price</div>
+      <h2>料金プラン</h2>
+      <p>まずは基本のサイトから。必要なものは、無料相談でお話を伺ってからご提案します。</p>
+    </div>
+    <div class="plan">
+      <div class="plan-main">
+        <span class="badge">先着10名さま限定</span>
+        <h3>公式サイト 基本プラン</h3>
+        <div class="yen">50,000円<small>（税抜）〜</small></div>
+        <ul>
+          <li>トップページ</li>
+          <li>プロフィール・活動紹介</li>
+          <li>動画・SNSへのリンク</li>
+          <li>お問い合わせフォーム</li>
+          <li>スマートフォン対応</li>
+          <li>最短2週間で公開</li>
+        </ul>
+      </div>
+      <div>
+        <div class="overview-box">
+          <table class="overview-table">
+            <tr><th>お知らせ更新機能</th><td>お知らせやブログを、ご自身で書いて更新できるようにします<br><b>＋50,000円</b></td></tr>
+            <tr><th>公開後の保守</th><td>公開後の不具合対応や、ちょっとした修正のご相談（1年分）<br><b>＋20,000円</b></td></tr>
+            <tr><th>ブログの整備</th><td>今あるブログを、記事にたどり着きやすく、検索で見つかりやすい形に整えます<br><b>＋70,000円</b></td></tr>
+            <tr><th>ネットショップ</th><td>Shopifyで、商品を販売できるお店をつくります<br><b>498,000円〜</b></td></tr>
+          </table>
+        </div>
+        <div class="notes">
+          <p>※ 基本プランの金額は、簡易的なサイトの場合の最低金額です。ページ数やご要望により変わります。</p>
+          <p>※ 独自ドメインなどの実費が必要な場合は、お見積りの際にご案内します。</p>
+          <p>※ 料金はすべて税抜です。お見積りは無料相談のあとにお出しします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Flow</div>
+      <h2>ご相談から公開までの流れ</h2>
+      <p>ご相談は無料です。お話を伺ったうえで、必要なものだけをご提案します。</p>
+    </div>
+    <ol class="flow">
+      <li><span class="n">1</span><div><h3>無料相談（30分・Zoom）</h3><p>活動のこと、サイトでやりたいことを伺います。「まだ決めていない」段階でも大丈夫です。</p></div></li>
+      <li><span class="n">2</span><div><h3>ご提案・お見積り</h3><p>伺った内容をもとに、サイトの構成と金額をお送りします。ご納得いただけたらご依頼ください。</p></div></li>
+      <li><span class="n">3</span><div><h3>素材のご準備</h3><p>写真・ロゴ・プロフィールなどをいただきます。文章づくりが苦手な方は、こちらで下書きをお作りします。</p></div></li>
+      <li><span class="n">4</span><div><h3>デザイン・制作</h3><p>完成イメージをご確認いただきながら進めます。</p></div></li>
+      <li><span class="n">5</span><div><h3>ご確認・修正</h3><p>気になるところを伺って、直します。</p></div></li>
+      <li><span class="n">6</span><div><h3>公開</h3><p>最短2週間で公開します。公開後の使い方もご説明します。</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq" class="bg-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Q&amp;A</div>
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Q. パソコンやWebに詳しくなくても大丈夫ですか？</summary><p>大丈夫です。必要なことは、こちらから順番にご案内します。</p></details>
+      <details><summary>Q. 文章や写真がそろっていません。</summary><p>文章はお話を伺って下書きをお作りします。写真は、今お持ちのものやYouTubeのサムネイルの素材から選ぶこともできます。</p></details>
+      <details><summary>Q. 相談したら、必ず依頼しないといけませんか？</summary><p>いいえ。お話を伺って、今は必要ないと感じたらそうお伝えします。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>まずは30分の無料相談から</h2>
+      <p>Zoomで、活動のことやサイトでやりたいことを伺います。</p>
+      <a class="btn-white" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談の日程を選ぶ</a>
+    </div>
+    <div class="contact-box" style="margin-top:28px">
+      <div>
+        <div class="contact-item">
+          <div class="contact-label">法人名</div>
+          <div class="contact-value">一般社団法人JMSA（2013年4月設立）</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">代表理事</div>
+          <div class="contact-value">板谷 佳朗（いたやよしろう）</div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-item">
+          <div class="contact-label">所在地</div>
+          <div class="contact-value">〒115-0045 東京都北区赤羽1-7-9 赤羽第一葉山ビル4F</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">お問い合わせ</div>
+          <div class="contact-value"><a href="mailto:dream100marketing@gmail.com">dream100marketing@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="../">一般社団法人JMSA トップへ</a><br>
+  &copy; 2013–2026 一般社団法人JMSA All Rights Reserved.
+</footer>
+
+</body>
+</html>
