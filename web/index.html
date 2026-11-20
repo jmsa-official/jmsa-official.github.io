@@ -427,6 +427,13 @@
   .cta-box h2 { font-size:clamp(1.3rem,3vw,1.7rem); font-weight:800; margin-bottom:10px; }
   .cta-box p { opacity:.92; margin-bottom:26px; font-size:.95rem; }
   .cta-box .btn-white { display:inline-block; background:#fff; color:var(--blue-dark); padding:15px 36px; border-radius:100px; font-weight:800; box-shadow:0 10px 28px #0003; }
+  .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; }
+  .hero-grid .hero-img { width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:20px; box-shadow:0 24px 60px #0b3d9126; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; gap:32px; } .hero { padding-top:64px; } }
+  .wide-img { width:100%; aspect-ratio:16/8; object-fit:cover; border-radius:18px; margin-bottom:32px; border:1px solid var(--line); }
+  .flow-wrap { display:grid; grid-template-columns:.9fr 1.1fr; gap:36px; align-items:start; }
+  .flow-wrap .side-img { width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:18px; position:sticky; top:96px; }
+  @media (max-width:860px){ .flow-wrap{ grid-template-columns:1fr; } .flow-wrap .side-img{ position:static; } }
 </style>
 </head>
 <body>
@@ -449,7 +456,8 @@
 </header>
 
 <div id="top" class="hero">
-  <div class="hero-inner">
+  <div class="hero-inner hero-grid">
+    <div>
     <span class="eyebrow">WEBSITE PRODUCTION</span>
     <h1>YouTuber・個人で活動する方の<br><em>公式サイト制作</em></h1>
     <p>プロフィールとお問い合わせの窓口をひとつに。お仕事のご相談が届きやすい「名刺がわりのサイト」をお作りします。</p>
@@ -462,6 +470,8 @@
       <a class="btn-primary" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談（30分・Zoom）を予約する</a>
       <a class="btn-secondary" href="#price">料金を見る</a>
     </div>
+    </div>
+    <img class="hero-img" src="img/hero.jpg" alt="自宅のスタジオで、ノートパソコンに映る自分の動画チャンネルを見るYouTuberのイメージ">
   </div>
 </div>
 
@@ -472,6 +482,7 @@
       <h2>公式サイトがあると、変わること</h2>
       <p>YouTubeの概要欄やSNSだけでは、あなたの活動をまとめて伝えにくいことがあります。公式サイトは、視聴者の方にも、お仕事を考えている企業の方にも開いてもらえる入り口になります。</p>
     </div>
+    <img class="wide-img" src="img/mockup.jpg" alt="パソコンとスマートフォンに表示された公式サイトのイメージ" loading="lazy">
     <div class="why-grid">
       <div class="service-card">
         <span class="service-step">1</span>
@@ -545,6 +556,8 @@
       <h2>ご相談から公開までの流れ</h2>
       <p>ご相談は無料です。お話を伺ったうえで、必要なものだけをご提案します。</p>
     </div>
+    <div class="flow-wrap">
+    <img class="side-img" src="img/consult.jpg" alt="Zoomでの無料相談のイメージ" loading="lazy">
     <ol class="flow">
       <li><span class="n">1</span><div><h3>無料相談（30分・Zoom）</h3><p>活動のこと、サイトでやりたいことを伺います。「まだ決めていない」段階でも大丈夫です。</p></div></li>
       <li><span class="n">2</span><div><h3>ご提案・お見積り</h3><p>伺った内容をもとに、サイトの構成と金額をお送りします。ご納得いただけたらご依頼ください。</p></div></li>
@@ -553,6 +566,7 @@
       <li><span class="n">5</span><div><h3>ご確認・修正</h3><p>気になるところを伺って、直します。</p></div></li>
       <li><span class="n">6</span><div><h3>公開</h3><p>最短2週間で公開します。公開後の使い方もご説明します。</p></div></li>
     </ol>
+    </div>
   </div>
 </section>
 
