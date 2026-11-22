@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームページ制作 55,000円（税込）| 一般社団法人JMSA</title>
+<meta name="description" content="お店・教室・個人のお仕事のホームページを、55,000円（税込）でお作りします。文章は打ち合わせをもとに下書きし、スマートフォン対応・お問い合わせフォーム・公開の作業まで含みます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0d6efd;
+    --blue-dark: #0b3d91;
+    --green: #1fa855;
+    --green-dark: #168a45;
+    --ink: #1a2233;
+    --ink-soft: #4a5568;
+    --line: #e4e8ef;
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    word-break: auto-phrase;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 760px; }
+
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1000px; margin: 0 auto; padding: 10px 20px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.98rem; text-decoration: none; }
+  .brand img { height: 32px; width: auto; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 56px; padding: 14px 28px; border-radius: 999px;
+    font-weight: 700; font-size: 1.02rem; text-decoration: none;
+    transition: background .15s, transform .15s;
+  }
+  .btn:focus-visible { outline: 3px solid #ffbf47; outline-offset: 3px; }
+  .btn-buy { background: var(--green); color: #fff; box-shadow: 0 6px 18px rgba(31,168,85,.28); }
+  .btn-buy:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .btn-sub { background: #fff; color: var(--blue-dark); border: 2px solid var(--blue); }
+  .btn-sub:hover { background: #eef4ff; }
+  .btn.nav-cta { min-height: 40px; padding: 6px 18px; font-size: .88rem; box-shadow: none; }
+
+  /* Hero */
+  .hero { background: linear-gradient(180deg, #eef4ff 0%, #fff 100%); padding: 40px 0 48px; }
+  .hero-grid { display: grid; gap: 28px; align-items: center; }
+  .eyebrow { display: inline-block; font-size: .85rem; font-weight: 700; color: var(--blue-dark); background: #dbe7ff; padding: 4px 12px; border-radius: 6px; }
+  .hero h1 { font-size: clamp(1.7rem, 6.4vw, 2.6rem); line-height: 1.4; font-weight: 900; margin: 14px 0 14px; letter-spacing: .01em; }
+  .hero h1 .price { color: var(--blue); white-space: nowrap; }
+  .lead { color: var(--ink-soft); font-size: 1rem; }
+  .price-box { margin: 22px 0 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .price-num { font-size: 2.6rem; font-weight: 900; color: var(--ink); line-height: 1.1; }
+  .price-num small { font-size: 1rem; font-weight: 700; margin-left: 4px; }
+  .price-note { font-size: .9rem; color: var(--ink-soft); }
+  .cta-row { display: flex; flex-direction: column; gap: 12px; }
+  .cta-note { font-size: .82rem; color: var(--ink-soft); margin-top: 10px; }
+  .hero-img img { border-radius: 16px; box-shadow: 0 18px 40px rgba(13,40,100,.14); }
+
+  section { padding: 64px 0; }
+  section.soft { background: var(--bg-soft); }
+  h2 { font-size: clamp(1.35rem, 5vw, 1.85rem); line-height: 1.45; font-weight: 900; margin-bottom: 14px; }
+  .sec-lead { color: var(--ink-soft); margin-bottom: 28px; }
+
+  .for-list { list-style: none; display: grid; gap: 12px; }
+  .for-list li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px 16px 50px; position: relative; font-weight: 500; }
+  .for-list li::before { content: ""; position: absolute; left: 18px; top: 22px; width: 18px; height: 10px; border-left: 3px solid var(--green); border-bottom: 3px solid var(--green); transform: rotate(-45deg); }
+
+  .plan { background: #fff; border: 2px solid var(--blue); border-radius: 18px; overflow: hidden; }
+  .plan-head { background: var(--blue); color: #fff; padding: 18px 22px; }
+  .plan-head p { font-size: .9rem; opacity: .9; }
+  .plan-head strong { font-size: 2rem; font-weight: 900; }
+  .plan-head strong small { font-size: .95rem; }
+  .plan-body { padding: 22px; }
+  .plan-body h3 { font-size: 1rem; margin-bottom: 10px; }
+  .inc { list-style: none; display: grid; gap: 10px; margin-bottom: 26px; }
+  .inc li { padding-left: 30px; position: relative; }
+  .inc li::before { content: ""; position: absolute; left: 4px; top: 9px; width: 14px; height: 8px; border-left: 3px solid var(--blue); border-bottom: 3px solid var(--blue); transform: rotate(-45deg); }
+  .inc li span { display: block; font-size: .88rem; color: var(--ink-soft); }
+  .exc { background: var(--bg-soft); border-radius: 12px; padding: 16px 18px; font-size: .93rem; }
+  .exc ul { margin: 6px 0 0 1.2em; }
+  .exc p + p { margin-top: 8px; }
+
+  .two { display: grid; gap: 28px; align-items: center; }
+  .two img { border-radius: 16px; }
+  .points { display: grid; gap: 18px; }
+  .points div { border-left: 4px solid var(--blue); padding: 2px 0 2px 16px; }
+  .points h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .points p { color: var(--ink-soft); font-size: .95rem; }
+
+  .flow { list-style: none; counter-reset: step; display: grid; gap: 14px; }
+  .flow li { counter-increment: step; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 18px 70px; position: relative; }
+  .flow li::before { content: counter(step); position: absolute; left: 18px; top: 18px; width: 36px; height: 36px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 900; display: grid; place-items: center; }
+  .flow h3 { font-size: 1.02rem; margin-bottom: 2px; }
+  .flow p { color: var(--ink-soft); font-size: .93rem; }
+
+  .about { display: grid; gap: 20px; }
+  .about dl { display: grid; grid-template-columns: 7em 1fr; gap: 8px 12px; font-size: .95rem; }
+  .about dt { color: var(--ink-soft); }
+
+  .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; }
+  .faq summary { cursor: pointer; padding: 16px 44px 16px 18px; font-weight: 700; position: relative; list-style: none; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--blue); }
+  .faq details[open] summary::after { content: "−"; }
+  .faq summary:focus-visible { outline: 3px solid #ffbf47; outline-offset: 2px; border-radius: 12px; }
+  .faq .ans { padding: 0 18px 18px; color: var(--ink-soft); }
+
+  .final { background: var(--blue-dark); color: #fff; text-align: center; }
+  .final h2 { color: #fff; }
+  .final .sec-lead { color: #d6e2ff; }
+  .final .price-num { color: #fff; }
+  .final .cta-row { max-width: 420px; margin: 0 auto; }
+  .final .btn-sub { background: transparent; color: #fff; border-color: #fff; }
+  .final .btn-sub:hover { background: rgba(255,255,255,.1); }
+  .final .cta-note { color: #d6e2ff; }
+  .final .cta-note a { color: #fff; }
+
+  footer { padding: 28px 0 110px; font-size: .85rem; color: var(--ink-soft); text-align: center; }
+  footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-bottom: 10px; }
+
+  /* sticky bottom CTA (mobile) */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: rgba(255,255,255,.96); border-top: 1px solid var(--line);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    display: flex; align-items: center; gap: 12px;
+    transform: translateY(110%); transition: transform .25s;
+  }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta .s-price { font-weight: 900; font-size: 1.05rem; line-height: 1.2; white-space: nowrap; }
+  .sticky-cta .s-price small { display: block; font-size: .72rem; font-weight: 500; color: var(--ink-soft); }
+  .sticky-cta .btn { flex: 1; min-height: 50px; padding: 10px 16px; font-size: .98rem; }
+
+  @media (min-width: 820px) {
+    .cta-row .btn { white-space: nowrap; }
+    .hero { padding: 64px 0 72px; }
+    .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 44px; }
+    .cta-row { flex-direction: row; }
+    .final .cta-row { flex-direction: column; }
+    .for-list { grid-template-columns: 1fr 1fr; }
+    .two { grid-template-columns: 1fr 1fr; gap: 44px; }
+    .plan-wrap { display: grid; grid-template-columns: 1fr; }
+    .sticky-cta { display: none; }
+    footer { padding-bottom: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top"><img src="../assets/logo.jpg" alt="" width="32" height="32">一般社団法人JMSA</a>
+    <a class="btn btn-buy nav-cta" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00">申し込む</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">ホームページ制作</span>
+        <h1>ホームページを<br><span class="price">55,000円（税込）</span>で<br>お作りします</h1>
+        <p class="lead">お店、教室、個人のお仕事。名前で検索した人や、紹介を受けた人が最初に見るページを、文章の下書きから公開の作業まで引き受けます。</p>
+        <div class="price-box">
+          <span class="price-num">55,000円<small>（税込）</small></span>
+          <span class="price-note">本体50,000円＋消費税<br>最短2週間で公開</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-buy" id="hero-buy" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00">申し込む（カードで支払う）</a>
+          <a class="btn btn-sub" href="#plan">含まれる内容を見る</a>
+        </div>
+        <p class="cta-note">お支払いはStripeの決済画面で行います。お支払い後のキャンセル・返金はお受けしていません。</p>
+      </div>
+      <div class="hero-img">
+        <img src="../web/img/mockup.jpg" alt="パソコンとスマートフォンに同じホームページが表示されているイメージ" width="1400" height="933">
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <h2>お店・教室・個人のお仕事をしている方へ</h2>
+      <p class="sec-lead">ページ数の多い大きなサイトではなく、仕事の内容と連絡先がきちんと伝わるホームページを作ります。</p>
+      <ul class="for-list">
+        <li>お店や教室を開いたが、ホームページがまだない</li>
+        <li>InstagramやLINEだけで案内していて、まとまった説明ができない</li>
+        <li>紹介を受けた人に「ここを見てください」と送れるページがほしい</li>
+        <li>問い合わせの窓口を1つにまとめたい</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="soft" id="plan">
+    <div class="wrap narrow">
+      <h2>55,000円に含まれるもの</h2>
+      <p class="sec-lead">追加料金のかかる項目は、お申し込みの前にお伝えします。</p>
+      <div class="plan">
+        <div class="plan-head">
+          <p>ホームページ制作</p>
+          <strong>55,000円<small>（税込）</small></strong>
+        </div>
+        <div class="plan-body">
+          <h3>含まれる内容</h3>
+          <ul class="inc">
+            <li>トップページ</li>
+            <li>事業・サービスの紹介、プロフィール</li>
+            <li>文章の下書き<span>打ち合わせで伺った話をもとに、JMSAが書きます。</span></li>
+            <li>SNS・YouTubeへのリンク、動画の埋め込み</li>
+            <li>お問い合わせフォーム<span>Googleフォームを使います。届いた問い合わせは、お客様のGoogleアカウントにたまります。</span></li>
+            <li>スマートフォンでの表示</li>
+            <li>公開の作業まで</li>
+          </ul>
+          <div class="exc">
+            <p><strong>別料金になるもの</strong></p>
+            <ul>
+              <li>ページを増やす、ネットショップを付けるなど、上の内容を超える制作</li>
+              <li>独自ドメインなどの実費（必要な場合は、作業の前にご案内します）</li>
+            </ul>
+            <p>上の内容で足りるか迷う方は、お申し込みの前に<a href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談（30分・Zoom）</a>で伺います。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div>
+        <h2>文章や写真がそろっていなくても始められます</h2>
+        <div class="points">
+          <div>
+            <h3>文章はJMSAが下書きします</h3>
+            <p>Zoomの打ち合わせで、お仕事の内容や来てほしいお客様を伺い、ページの文章を書きます。お客様には、読んで直したいところを教えていただきます。</p>
+          </div>
+          <div>
+            <h3>写真は手元にあるものから選びます</h3>
+            <p>スマートフォンで撮った写真や、SNSに載せている写真から使えるものを一緒に選びます。</p>
+          </div>
+          <div>
+            <h3>マーケティングの経験を生かします</h3>
+            <p>JMSAは2013年から、マーケティングのコンサルティングとセミナーのプロデュースを続けてきました。誰に何を伝えて、どう問い合わせてもらうかから組み立てます。</p>
+          </div>
+        </div>
+      </div>
+      <img src="../web/img/consult.jpg" alt="Zoomで打ち合わせをしているイメージ" width="1400" height="933" loading="lazy">
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap narrow">
+      <h2>お申し込みから公開までの流れ</h2>
+      <p class="sec-lead">お支払いが済んだら、打ち合わせの日程を決めて制作に入ります。</p>
+      <ol class="flow">
+        <li><h3>お申し込み・お支払い</h3><p>このページのボタンから、クレジットカード・Apple Payなどでお支払いください。</p></li>
+        <li><h3>JMSAからメールでご連絡</h3><p>お支払いのときに入力されたメールアドレスに、打ち合わせの日程の候補をお送りします。</p></li>
+        <li><h3>打ち合わせ（Zoom）</h3><p>お仕事の内容、ホームページに載せたいことを伺います。</p></li>
+        <li><h3>素材のご準備</h3><p>写真やロゴをお送りください。文章は打ち合わせをもとにJMSAが下書きします。</p></li>
+        <li><h3>制作・ご確認・修正</h3><p>できあがった画面を見ていただき、気になるところを直します。</p></li>
+        <li><h3>公開</h3><p>最短2週間で公開します。お問い合わせフォームの受け取り方もご説明します。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap narrow">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>パソコンやWebに詳しくなくても頼めますか？</summary>
+        <div class="ans">頼めます。必要な作業は、こちらから順番にご案内します。</div>
+      </details>
+      <details>
+        <summary>文章も写真もほとんどありません。</summary>
+        <div class="ans">文章は打ち合わせで伺った話をもとに下書きします。写真は、お手元の写真やSNSに載せている写真から選べます。</div>
+      </details>
+      <details>
+        <summary>55,000円の内容で足りるかわかりません。</summary>
+        <div class="ans">お申し込みの前に、<a href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">無料相談（30分・Zoom）</a>でご希望を伺えます。内容を超える場合は、そこでお見積りをお出しします。</div>
+      </details>
+      <details>
+        <summary>支払い方法は何がありますか？</summary>
+        <div class="ans">クレジットカード（Visa・Mastercard・JCB・American Express）、Apple Pay、Linkでお支払いいただけます。お申し込みのときに一括でお支払いください。</div>
+      </details>
+      <details>
+        <summary>申し込んだあとにキャンセルできますか？</summary>
+        <div class="ans">制作の時間を確保してからお受けするため、お支払い後のキャンセル・返金はお受けしていません。迷っている方は、先に無料相談をご利用ください。</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap narrow">
+      <h2>ホームページ制作のお申し込み</h2>
+      <p class="sec-lead">お支払いが済んだら、JMSAからメールで打ち合わせの日程をご連絡します。</p>
+      <div class="price-box" style="justify-content:center">
+        <span class="price-num">55,000円<small>（税込）</small></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-buy" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00">申し込む（カードで支払う）</a>
+        <a class="btn btn-sub" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">先に無料相談を予約する</a>
+      </div>
+      <p class="cta-note">お支払い後のキャンセル・返金はお受けしていません。<a href="tokushoho.html">特定商取引法に基づく表記</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow about">
+      <h2>運営しているのは一般社団法人JMSAです</h2>
+      <dl>
+        <dt>法人名</dt><dd>一般社団法人JMSA（2013年4月設立）</dd>
+        <dt>代表理事</dt><dd>板谷 佳朗（いたや よしろう）</dd>
+        <dt>お問い合わせ</dt><dd><a href="mailto:dream100marketing@gmail.com">dream100marketing@gmail.com</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <nav>
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="../">一般社団法人JMSA トップ</a>
+  </nav>
+  <p>© 2013–2026 一般社団法人JMSA</p>
+</footer>
+
+<div class="sticky-cta" id="sticky" aria-hidden="true">
+  <div class="s-price">55,000円<small>税込・最短2週間</small></div>
+  <a class="btn btn-buy" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00" tabindex="-1">申し込む</a>
+</div>
+
+<script>
+  (function () {
+    var hero = document.getElementById('hero-buy');
+    var bar = document.getElementById('sticky');
+    if (!('IntersectionObserver' in window) || !hero || !bar) return;
+    var finalSec = document.querySelector('.final');
+    var heroVisible = true, finalVisible = false;
+    function update() {
+      var show = !heroVisible && !finalVisible;
+      bar.classList.toggle('show', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      bar.querySelector('a').tabIndex = show ? 0 : -1;
+    }
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function (e) { finalVisible = e[0].isIntersecting; update(); }).observe(finalSec);
+  })();
+</script>
+</body>
+</html>
