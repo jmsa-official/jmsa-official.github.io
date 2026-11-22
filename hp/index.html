@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ホームページ制作 55,000円（税込）| 一般社団法人JMSA</title>
-<meta name="description" content="お店・教室・個人のお仕事のホームページを、55,000円（税込）でお作りします。文章は打ち合わせをもとに下書きし、スマートフォン対応・お問い合わせフォーム・公開の作業まで含みます。">
+<meta name="description" content="お店・教室・個人のお仕事のホームページを、55,000円（税込）でお作りします。銀行振込なら52,250円（税込）。文章は打ち合わせをもとに下書きし、スマートフォン対応・お問い合わせフォーム・公開の作業まで含みます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -93,6 +93,15 @@
   .inc li { padding-left: 30px; position: relative; }
   .inc li::before { content: ""; position: absolute; left: 4px; top: 9px; width: 14px; height: 8px; border-left: 3px solid var(--blue); border-bottom: 3px solid var(--blue); transform: rotate(-45deg); }
   .inc li span { display: block; font-size: .88rem; color: var(--ink-soft); }
+  .pay { display: grid; gap: 12px; margin-bottom: 22px; }
+  .pay div { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .pay div.bank { border: 2px solid var(--green); background: #f1fbf4; }
+  .pay b { display: block; font-size: .92rem; }
+  .pay strong { font-size: 1.5rem; font-weight: 900; }
+  .pay strong small { font-size: .85rem; }
+  .pay span { display: block; font-size: .85rem; color: var(--ink-soft); }
+  .bank-link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--green-dark); }
+  .final .bank-link { color: #fff; }
   .exc { background: var(--bg-soft); border-radius: 12px; padding: 16px 18px; font-size: .93rem; }
   .exc ul { margin: 6px 0 0 1.2em; }
   .exc p + p { margin-top: 8px; }
@@ -149,6 +158,7 @@
   .sticky-cta .btn { flex: 1; min-height: 50px; padding: 10px 16px; font-size: .98rem; }
 
   @media (min-width: 820px) {
+    .pay { grid-template-columns: 1fr 1fr; }
     .cta-row .btn { white-space: nowrap; }
     .hero { padding: 64px 0 72px; }
     .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 44px; }
@@ -180,13 +190,14 @@
         <p class="lead">お店、教室、個人のお仕事。名前で検索した人や、紹介を受けた人が最初に見るページを、文章の下書きから公開の作業まで引き受けます。</p>
         <div class="price-box">
           <span class="price-num">55,000円<small>（税込）</small></span>
-          <span class="price-note">本体50,000円＋消費税<br>最短2週間で公開</span>
+          <span class="price-note">本体50,000円＋消費税<br>銀行振込なら5%引きの52,250円（税込）</span>
         </div>
         <div class="cta-row">
           <a class="btn btn-buy" id="hero-buy" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00">申し込む（カードで支払う）</a>
           <a class="btn btn-sub" href="#plan">含まれる内容を見る</a>
         </div>
-        <p class="cta-note">お支払いはStripeの決済画面で行います。お支払い後のキャンセル・返金はお受けしていません。</p>
+        <a class="bank-link" href="mailto:dream100marketing@gmail.com?subject=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E5%88%B6%E4%BD%9C%EF%BC%88%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC%EF%BC%89%E3%81%AE%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF&body=%E4%B8%80%E8%88%AC%E7%A4%BE%E5%9B%A3%E6%B3%95%E4%BA%BAJMSA%20%E5%BE%A1%E4%B8%AD%0A%0A%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E5%88%B6%E4%BD%9C%E3%82%92%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC%EF%BC%8852%2C250%E5%86%86%E3%83%BB%E7%A8%8E%E8%BE%BC%EF%BC%89%E3%81%A7%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%99%E3%80%82%0A%E6%8C%AF%E8%BE%BC%E5%85%88%E3%82%92%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%83%BB%E5%B1%8B%E5%8F%B7%EF%BC%88%E3%81%82%E3%82%8C%E3%81%B0%EF%BC%89%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A">銀行振込で申し込む（5%引き・52,250円）</a>
+        <p class="cta-note">カードのお支払いはStripeの決済画面で行います。最短2週間で公開。お支払い後のキャンセル・返金はお受けしていません。</p>
       </div>
       <div class="hero-img">
         <img src="../web/img/mockup.jpg" alt="パソコンとスマートフォンに同じホームページが表示されているイメージ" width="1400" height="933">
@@ -227,6 +238,11 @@
             <li>スマートフォンでの表示</li>
             <li>公開の作業まで</li>
           </ul>
+          <h3>お支払い方法と金額</h3>
+          <div class="pay">
+            <div><b>クレジットカード・Apple Pay・Link</b><strong>55,000円<small>（税込）</small></strong><span>お申し込みと同時にお支払い</span></div>
+            <div class="bank"><b>銀行振込（5%引き）</b><strong>52,250円<small>（税込）</small></strong><span>メールでお申し込み後、7日以内にお振込み。振込手数料はお客様のご負担です。</span></div>
+          </div>
           <div class="exc">
             <p><strong>別料金になるもの</strong></p>
             <ul>
@@ -266,10 +282,10 @@
   <section class="soft">
     <div class="wrap narrow">
       <h2>お申し込みから公開までの流れ</h2>
-      <p class="sec-lead">お支払いが済んだら、打ち合わせの日程を決めて制作に入ります。</p>
+      <p class="sec-lead">お支払いを確認したら、打ち合わせの日程を決めて制作に入ります。</p>
       <ol class="flow">
-        <li><h3>お申し込み・お支払い</h3><p>このページのボタンから、クレジットカード・Apple Payなどでお支払いください。</p></li>
-        <li><h3>JMSAからメールでご連絡</h3><p>お支払いのときに入力されたメールアドレスに、打ち合わせの日程の候補をお送りします。</p></li>
+        <li><h3>お申し込み・お支払い</h3><p>カードの方は、このページのボタンからお支払いください。銀行振込の方は、メールでお申し込みいただくと振込先をお送りします。7日以内にお振込みください。</p></li>
+        <li><h3>JMSAからメールでご連絡</h3><p>お支払いを確認したら、打ち合わせの日程の候補をメールでお送りします。</p></li>
         <li><h3>打ち合わせ（Zoom）</h3><p>お仕事の内容、ホームページに載せたいことを伺います。</p></li>
         <li><h3>素材のご準備</h3><p>写真やロゴをお送りください。文章は打ち合わせをもとにJMSAが下書きします。</p></li>
         <li><h3>制作・ご確認・修正</h3><p>できあがった画面を見ていただき、気になるところを直します。</p></li>
@@ -295,7 +311,7 @@
       </details>
       <details>
         <summary>支払い方法は何がありますか？</summary>
-        <div class="ans">クレジットカード（Visa・Mastercard・JCB・American Express）、Apple Pay、Linkでお支払いいただけます。お申し込みのときに一括でお支払いください。</div>
+        <div class="ans">クレジットカード（Visa・Mastercard・JCB・American Express）、Apple Pay、Linkは55,000円（税込）で、お申し込みのときに一括でお支払いください。銀行振込は5%引きの52,250円（税込）です。メールでお申し込みいただいたあと、7日以内に一括でお振込みください。振込手数料はお客様のご負担です。</div>
       </details>
       <details>
         <summary>申し込んだあとにキャンセルできますか？</summary>
@@ -307,14 +323,15 @@
   <section class="final">
     <div class="wrap narrow">
       <h2>ホームページ制作のお申し込み</h2>
-      <p class="sec-lead">お支払いが済んだら、JMSAからメールで打ち合わせの日程をご連絡します。</p>
+      <p class="sec-lead">お支払いを確認したら、JMSAからメールで打ち合わせの日程をご連絡します。</p>
       <div class="price-box" style="justify-content:center">
         <span class="price-num">55,000円<small>（税込）</small></span>
       </div>
       <div class="cta-row">
         <a class="btn btn-buy" href="https://buy.stripe.com/4gM4gA2JR0y4gP8gGkbsc00">申し込む（カードで支払う）</a>
-        <a class="btn btn-sub" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">先に無料相談を予約する</a>
+        <a class="btn btn-sub" href="mailto:dream100marketing@gmail.com?subject=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E5%88%B6%E4%BD%9C%EF%BC%88%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC%EF%BC%89%E3%81%AE%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF&body=%E4%B8%80%E8%88%AC%E7%A4%BE%E5%9B%A3%E6%B3%95%E4%BA%BAJMSA%20%E5%BE%A1%E4%B8%AD%0A%0A%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E5%88%B6%E4%BD%9C%E3%82%92%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC%EF%BC%8852%2C250%E5%86%86%E3%83%BB%E7%A8%8E%E8%BE%BC%EF%BC%89%E3%81%A7%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%99%E3%80%82%0A%E6%8C%AF%E8%BE%BC%E5%85%88%E3%82%92%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%83%BB%E5%B1%8B%E5%8F%B7%EF%BC%88%E3%81%82%E3%82%8C%E3%81%B0%EF%BC%89%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A">銀行振込で申し込む（52,250円）</a>
       </div>
+      <a class="bank-link" href="https://timerex.net/s/itaya/13a1db0b" target="_blank" rel="noopener">迷っている方は、先に無料相談（30分・Zoom）を予約する</a>
       <p class="cta-note">お支払い後のキャンセル・返金はお受けしていません。<a href="tokushoho.html">特定商取引法に基づく表記</a></p>
     </div>
   </section>
